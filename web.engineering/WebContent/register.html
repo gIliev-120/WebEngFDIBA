@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>FDIBA Register</title>
+			<style>
+				body {
+					background-color:black;
+					color:white;
+				}
+				.box {
+					width:400px;
+					margin: auto;
+					padding: 10px;
+					border: 2px solid white;
+					box-shadow: 5px 5px 18px #888888
+				}
+				.row {
+					padding: 10px;
+					margin:15px;
+				}
+				.button {
+					background-color: #4CAF50;
+					color: white;
+					float:right;
+					padding:8px;
+					border-radius: 33px;
+					border:none;
+					box-shadow: 0 0 8px #00ff00;		
+				}
+				.inputs {
+					float:right;
+					padding:5px;
+				}
+		
+			</style>
+			
+			<script type="text/javascript">
+				function validateBeforeSubmit(){
+					var i,fields = ["username", "fistname","lastname","password","confirmation"];
+					
+					for(i=0;i<fields.length;i++){
+						if(document.forms["registrationForm"][fields[i]].value === ""){
+							alert("Fill all input fields!");
+							return false;
+						}
+					}
+					
+			</script>
+	</head>
+	<body>
+		<form action="./register" name="registrationForm" onsubmit="return validateBeforeSubmit()" method="post">
+		
+			<div class = "box">
+				<div class = "row">
+					<span>Username:</span>
+					<input type="text" name="username" class="inputs">
+				</div>
+				<div class = "row">
+					<span>First name:</span>
+					<input type="text" name="firstname" class="inputs">
+				</div>
+				<div class = "row">
+					<span>Last name:</span>
+					<input type="text" name="lastname" class="inputs">
+				</div>
+				<div class = "row">
+					<span>Password:</span>
+					<input type="password" name="password" id="pass" class="inputs">
+				</div>
+				<div class = "row">
+					<span>Password confirmation:</span>
+					<input type="password" name="confirmation" id ="passConfirm"class="inputs">
+				</div>
+				<div class = "row">
+					<input type="submit" class = "button" value="Register">
+				</div>
+			</div>
+		</form> 
+	</body>
+</html>
